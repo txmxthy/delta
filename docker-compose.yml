@@ -1,0 +1,10 @@
+services:
+  spark:
+    image: deltaio/delta-docker:latest_arm64  # For M1/M2 Macs
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+    ports:
+      - "4040:4040"  # Spark UI
+    environment:
+      - PYTHONPATH=/app
